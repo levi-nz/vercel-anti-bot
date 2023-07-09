@@ -12,6 +12,15 @@ seems to be *very* short-lived.
 
 Disclaimer: this repository is intended for criticism only.
 
+### Benchmarks
+
+Token generation time:
+
+| CPU           | Average time |
+|---------------|--------------|
+| Apple M2      | 100.66 µs    |
+| Ryzen 9 5950X | 213.37 µs    |
+
 ## Background
 I first became aware of this after seeing [this tweet](https://twitter.com/jaredpalmer/status/1675192755763412992?s=20)
 from Vercel's VP claiming they have reduced costs by 100x since implementing this solution (as well as rate limiting).
@@ -215,7 +224,7 @@ an SWC visitor, that simplifies expressions into a constant value, and then we h
 
 From this point on all I had to do was design the token generation logic which can be found in `src/lib.rs`.
 
-If you run the benchmark using `cargo bench`, you can see that the average execution time is very low
+If you run the benchmark using `cargo +nightly bench`, you can see that the average execution time is very low
 (for me it was 100.66 µs = 0.10066 ms). Running the same script in node and the browser took around 0.11-0.27 ms,
 meaning our solution with parsing AST is the same, if not faster, than evaluating the JavaScript code.
 
