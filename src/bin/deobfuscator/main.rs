@@ -48,7 +48,12 @@ fn main() {
                 as_folder(deobfuscate::proxy_vars::Visitor::default()),
                 as_folder(deobfuscate::strings::Visitor),
                 as_folder(deobfuscate::computed_member_expr::Visitor),
-                as_folder(deobfuscate::math_expr::Visitor::new(0.2))
+
+                // You can un-comment this line to evaluate the math expression.
+                // Since we don't know the input here, we can only use a dummy input,
+                // unless you specify the input manually.
+                // This is mainly used for debug purposes.
+                //as_folder(deobfuscate::math_expr::Visitor::new(0.2))
             )
         )
             .expect("process_js_with_custom_pass failed");
