@@ -2,6 +2,10 @@
 Reverse engineering and analysis of Vercel's bot protection used on https://sdk.vercel.ai
 (and potentially more of their platforms).
 
+## Note
+This repository is outdated. Vercel now uses [Kasada](https://www.kasada.io/) on their platforms instead of their own custom solution.
+The code in this repository can also be heavily improved; this was originally made when I was fairly new to Rust.
+
 ## Usage
 The `generate_token` function in `src/lib.rs` takes in the data from the `/openai.jpeg` response,
 which returns a valid token for usage in the `custom-encoding` header on a protected request.
